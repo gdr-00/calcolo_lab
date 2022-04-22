@@ -24,18 +24,19 @@ c = input('Insert coeff c: ');
 
 if ~(a && b && c)
     error('One or more values are zero')
-else
-    delta = sqrt((b.^2)-4*a*c);
-    if delta<0
-        fprintf('No solution in R')
-    else 
-        if delta==0
-            x=(-b)./2*a;
-            fprintf('coincident solution %1.0f\n', x)
-        else
-            x1=(-b-delta)./2*a;
-            x2=(-b-delta)./2*a;
-            fprintf('2 solutions in r %1.0f %1.0f\n', x1, x2)
-        end
+end
+delta = sqrt((b.^2)-4*a*c);
+fprintf('%1.16f\n', delta)
+
+if delta<0
+    fprintf('No solution in R\n')
+else 
+    if delta==0
+        x=(-b)./(2*a);
+        fprintf('coincident solution %1.0f\n', x)
+    else
+        x1=(-b-delta)./(2*a);
+        x2=(-b+delta)./(2*a);
+        fprintf('2 solutions in r %1.0f %1.0f\n', x1, x2)
     end
 end
