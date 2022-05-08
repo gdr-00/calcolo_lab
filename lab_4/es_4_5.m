@@ -52,7 +52,7 @@ semilogy(abs(sqrt(2)-iterates(1, :)), "Color", 'b', "LineStyle","--") %errore tr
 semilogy(abs(sqrt(2)-iterates2(1, :)), "Color", 'g', "LineStyle","--")
 semilogy(abs(sqrt(2)-iterates3(1, :)), "Color", 'r', "LineStyle","--")
 
-legend()
+legend("residui f1", "residui f3", "residui f5", "scarto f1", "scarto f3", "scarto f5", "errore f1", "errore f3", "errore f5")
 
 hold off
 
