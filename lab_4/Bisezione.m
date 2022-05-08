@@ -67,7 +67,7 @@ switch method
             iterates(2,n+2)=iterates(2,n+1);
             iterates(3,n+2)=iterates(1,n+1);
             iterates(1,n+2)=(iterates(2,n+2)+iterates(3,n+2))/2;
-        elseif f(iterates(2,n+1))*f(iterates(1,n+1))<0
+        elseif f(iterates(2,n+1))*f(iterates(1,n+1))>0
             iterates(2,n+2)=iterates(1,n+1);
             iterates(3,n+2)=iterates(3,n+1);
             iterates(1,n+2)=(iterates(2,n+2)+iterates(3,n+2))/2;
