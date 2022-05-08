@@ -14,12 +14,12 @@ hold off
 fprintf('Last aprox of sol: %1.4f\n Last residual val: %1.4f\n Last weighted residual val: %1.4f\n Flag: %s\n', zero, res, wres, flag)
 
 figure(2)
-semilogy(abs(zero-iterates(1, :)), "Color", 'b') %errore tra zero calcolato e zero al passo n
+semilogy(abs(sqrt(2)-iterates(1, :)), "Color", 'b') %errore tra zero calcolato e zero al passo n
 hold on
 semilogy(abs(f(iterates(1, :))), "Color", 'r')%residui
 hold off
 
-df = @(x)(2.*x);
+%df = @(x)(2.*x);
 
 %figure(3)
 %semilogy(iterates(1, :), 1./abs(sqrt(2)-iterates(1, :)), "Color", "b")
