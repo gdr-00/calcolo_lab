@@ -21,20 +21,29 @@ for n=degs
     L_cheb=LagrangePoly(xinterp_cheb,xeval);
     yeval_equi=L_equi*yinterp_equi;
     yeval_cheb=L_cheb*yinterp_cheb;
+    c_equi_inter=polyfit(xinterp_equi, yinterp_equi, length(xinterp_equi)-1);
+    c_cheb_inter=polyfit(xinterp_cheb, yinterp_cheb, length(xinterp_cheb)-1);
+    
+    y_equi_inter=polyval(c_equi_inter, xinterp_equi);
+    y_cheb_inter=polyval(c_cheb_inter, xinterp_cheb);
     figure(1);
-    plot(xeval,f_eval,'LineWidth',2);
-    hold on
-    plot(xinterp_equi,yinterp_equi,'*')
-    plot(xinterp_cheb,yinterp_cheb,'p')
-    plot(xeval,yeval_equi);
-    plot(xeval,yeval_cheb);
-    legend('f Runge','dati interpolati equi','dati interpolati Cheb',...
-        'Interp. equi','Interp. cheb')
-    title(['Interpolazione a grado ' num2str(n)]);
-    hold off
+    plot()
+    %figure(1);
+    %plot(xeval,f_eval,'LineWidth',2);
+    %hold on
+    %plot(xinterp_equi,yinterp_equi,'*')
+    %plot(xinterp_cheb,yinterp_cheb,'p')
+    %plot(xeval,yeval_equi);
+    %plot(xeval,yeval_cheb);
+    %legend('f Runge','dati interpolati equi','dati interpolati Cheb',...
+    %    'Interp. equi','Interp. cheb')
+    %title(['Interpolazione a grado ' num2str(n)]);
+    %hold off
     pause()
-    E_equi=[E_equi,max(abs(yeval_equi-f_eval))];
-    E_cheb=[E_cheb,max(abs(yeval_cheb-f_eval))];
+    E_equi_inter=[E_equi,max(abs(yinterp_equi-y_equi_inter))];
+    E_cheb_inter=[E_cheb,max(abs(yinterp_cheb-y_cheb_inter))];
+    E_poli_equi =[E_equi,max(abs(y_equi_inter-yeval_equi))];
+    E_poli_cheb =[E_cheb,max(abs(y_cheb_inter-yeval_cheb))];
 end
 %% grafico errori
 figure(2);
