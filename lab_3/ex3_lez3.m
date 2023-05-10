@@ -9,7 +9,7 @@ for i=2:n
     Sn1(i) = Sn1(i-1) + 1/i^2;
 end
 
-Sn2 = cumsum(1./((1:n)./2));
+Sn2 = cumsum(1./((1:n).^2));
 
 SN1 = sqrt(6*Sn1);
 SN2 = sqrt(6*Sn2);
