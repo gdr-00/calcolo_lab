@@ -1,5 +1,5 @@
 clear all;
-clc
+clc;
 
 
 x = linspace(-1e-10,1e-10, 2000);
