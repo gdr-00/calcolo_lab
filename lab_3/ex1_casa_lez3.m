@@ -17,12 +17,8 @@ for i = 1:4
 end
 
 % Si nota che andando a scomporre in polinomio l'errore viene amplificato a
-% causa delle sottrazioni tra potenze di ordine differente, il che comporta
-% arrotondamenti, che vanno ad inficiare sulla precisione della sottrazione
-% soprattutto per i sottraendi di ordine minore, in questo caso ho delle
-% sottrazioni tra numeri molto piccoli (x^6) e numeri di ordini di
-% grandezza piu grandi (-6x oppure 1),  questo a causa della precisione
-% macchina comporta a perdita di risoluzione nel calcolo
+% causa delle sottrazioni che eseguite tra termini molto vicini in termini 
+% relativi portano all'amplificazione dell'errore di calcolo
 
 function y = y1(x)
     y = (1-x).^6;
