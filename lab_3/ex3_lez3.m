@@ -17,11 +17,11 @@ SN2 = sqrt(6*Sn2);
 err_relSn1 = abs(SN1-pi)/pi;
 err_relSn2 = abs(SN2-pi)/pi;
 
-diff_errZero = err_relSn2 - err_relSn1;
-figure;
+diff_errZero = err_relSn2 - err_relSn1';
+figure(1);
 plot(1:n, diff_errZero)
 
-figure;
+figure(2);
 semilogy(1:n, err_relSn1, '-.k')
 
 x(1) = 2;

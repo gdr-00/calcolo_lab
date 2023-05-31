@@ -1,0 +1,14 @@
+
+p = 4.999999999995 * 10^4;
+
+q = 10.^-2;  sol_esatta = 10.^-7;
+
+c = -p+sqrt(p^2+q);
+c1= q/(p+sqrt(p^2+q));
+
+err_rel = @(x) abs(sol_esatta-x)\abs(sol_esatta);
+
+disp(c(p))
+disp(c1(p))
+
+disp(err_rel)
