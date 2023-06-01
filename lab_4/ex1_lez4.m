@@ -12,4 +12,4 @@ fprintf('%1.0f\n', sign(f(0)*f(1)))
 x1 = 0.4428544010023885;
 
 figure(2);
-semilogy(linspace(0,1, iter), (abs(x1-xall)/abs(x1)))
+semilogy(1:iter, (abs(x1-xall)/abs(x1)))
