@@ -27,4 +27,4 @@ ind_disp = 3:2:2*N-1;
 w(ind_disp) = 2*h/3;
 
 % In una riga
-% w=h.*[1,repmat([4 2],1,N−1),4,1]./3;
+% w=h.*[1,repmat([4 2],1,N-1),4,1]./3;
