@@ -26,6 +26,14 @@ title('Interpolazione ai minimi quadrati: polyfit/polyval')
 
 %% Secondo metodo: equazioni normali
 fprintf('\n \t Metodo equazioni normali \n')
+
+%V = vander(x);
+%A = V(:,end-d:end);
+%coeffs_normal = (A'*A)\(A'*y'); % Calcolo i coeff con le eq normali
+
+%rec_normal = polyval(coeffs_normal(1:end),t); %uso in ordine i
+%coefficienti tanto non ho invertito la matrice
+
 V = fliplr(vander(x));
 A = V(:,1:d+1);
 coeffs_normal = (A'*A)\(A'*y'); % Calcolo i coeff con le eq normali
